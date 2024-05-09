@@ -39,3 +39,7 @@ console.log('Total harga setelah discount '+ totalsetelahdiscount);
 
 var totalkeseluruhan=totalharga1+totalhargasetelahdiscount+totalsetelahdiscount
 console.log('Total harga keseluruhan '+totalkeseluruhan);
+var ruang1 =10
+var ruang2 =11
+var perbandingan =ruang1<ruang2
+console.log(perbandingan);
