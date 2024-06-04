@@ -30,9 +30,12 @@
         </div>
         <h1 id="hargasepatu" class="font-bold ml-16">Rp2.850.000</h1>
         <div class="ml-14 flex rounded-sm">
-            <button onclick="kurang ()" class=" rounded-l-sm px-[10px] text-center font-bold border-2 flex justify-center" type="button ">-</button>
+            <button onclick="kurang ()" class=" rounded-l-sm px-[10px] text-center font-bold border-2 flex justify-center" id="productList" type="button ">-</button>
             <input class="w-7 border-y-2 text-center font-semibold" type="text" name="" id="inputjumlah" value="1">
             <button onclick="tambah ()" class="rounded-r-sm px-[8px] text-center font-bold border-2 flex justify-center" type="button ">+</button>
+        </div>
+        <div class="ml-20 text-center" id="totalharga">
+            
         </div>
     </section>
     <section class="w-[100%] h-[90px] bg-white mt-[300px] flex items-center">
@@ -56,6 +59,28 @@
             console.log(kurang);
             document.getElementById('inputjumlah').value=kurang
             var hasil
+        }
+        function totalharga () {
+            const productList = document.getElementById('product-list');
+            const products = productList.getElementsByTagName('li');
+            
+            for (let product of products) {
+                let currentPrice = parseInt(product.getAttribute('data-price'));
+                currentPrice++;  // Increment the price by 1
+                product.setAttribute('data-price', currentPrice);
+                product.textContent = `${product.getAttribute('data-name')}: Rp. ${currentPrice}`;
+            }
+        }
+        function incrementPrices(incrementValue) {
+            const productList = document.getElementById('product-list');
+            const products = productList.getElementsByTagName('li');
+            
+            for (let product of products) {
+                let currentPrice = parseInt(product.getAttribute('data-price'));
+                let newPrice = currentPrice + incrementValue;
+                product.setAttribute('data-price', newPrice);
+                product.textContent = `${product.getAttribute('data-name')}: Rp. ${newPrice}`;
+            }
         }
     </script>
 </body>

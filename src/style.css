@@ -627,6 +627,10 @@ video {
   margin-top: 300px;
 }
 
+.ml-20 {
+  margin-left: 5rem;
+}
+
 .flex {
   display: flex;
 }
@@ -721,11 +725,6 @@ video {
 .rounded-r-sm {
   border-top-right-radius: 0.125rem;
   border-bottom-right-radius: 0.125rem;
-}
-
-.rounded-r {
-  border-top-right-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
 }
 
 .border-2 {
@@ -897,8 +896,4 @@ video {
 
 .\*\:w-5 > * {
   width: 1.25rem;
-}
-
-.\*\:rounded-sm > * {
-  border-radius: 0.125rem;
 }
