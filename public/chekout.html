@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>checkout</title>
     <link rel="stylesheet" href="../src/style.css">
 </head>
 <body class="bg-slate-100 ">
-    <section class="flex w-[95%] h-[150px] mx-auto bg-white mt-20 flex items-center  p-5  shadow-md rounded-lg">
+    <section class="flex w-[95%] h-[150px] mx-auto bg-white mt-20 items-center  p-5  shadow-md rounded-lg">
         <input class="w-5 h-5 border-4 " type="checkbox" id="input1">
         <div class="bg-sepatu w-[120px] h-full bg-cover ml-7 rounded-md "></div>
-        <div class="w-42 ml-3 -mt-11  ">
+        <div class="w-42 ml-3 -mt-10  ">
             <p class="text-[18px] text-ellipsis font-semibold    ">
                 Adidas Ultraboost 22 Green Army <br>  (100% Authentic)
             </p>
@@ -28,19 +28,35 @@
                 <div class="bg-black/50"></div>
             </div>
         </div>
-        <h1 class="font-bold ml-16">Rp2.850.000</h1>
-        <div class="ml-14 flex ">
-            <button class="px-[10px] text-center font-bold border-2 flex justify-center" type="button ">-</button>
-            <input class="w-7 border-y-2 " type="number" name="" id="">
-            <button class="px-[8px] text-center font-bold border-2 flex justify-center" type="button ">+</button>
+        <h1 id="hargasepatu" class="font-bold ml-16">Rp2.850.000</h1>
+        <div class="ml-14 flex rounded-sm">
+            <button onclick="kurang ()" class=" rounded-l-sm px-[10px] text-center font-bold border-2 flex justify-center" type="button ">-</button>
+            <input class="w-7 border-y-2 text-center font-semibold" type="text" name="" id="inputjumlah" value="1">
+            <button onclick="tambah ()" class="rounded-r-sm px-[8px] text-center font-bold border-2 flex justify-center" type="button ">+</button>
         </div>
     </section>
-    <section class=" mt-[300px]">
-        <div class=" w-[100%] h-[90px] bg-white">
-            <div class="">
-                
+    <section class="w-[100%] h-[90px] bg-white mt-[300px] flex items-center">
+            <div class="w-32 absolute right-8 py-3 text-white font-semibold rounded-md  bg-green-500  text-center ">
+                Checkout
             </div>
-        </div>
     </section>
+
+    <script>
+        
+        function tambah () {
+            var tambah=document.getElementById('inputjumlah').value 
+            tambah++
+            console.log(tambah);
+            document.getElementById('inputjumlah').value=tambah
+            var hasil=tambah
+        }
+        function kurang () {
+            var kurang=document.getElementById('inputjumlah').value 
+            kurang--
+            console.log(kurang);
+            document.getElementById('inputjumlah').value=kurang
+            var hasil
+        }
+    </script>
 </body>
 </html>

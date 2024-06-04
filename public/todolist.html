@@ -12,11 +12,24 @@
             To-Do list
         </h1>
     <div class="flex ">
-        <input class="mt-20 ml-5  py-[6px] pl-3 pr-[20%] rounded-md border-4" type="password" id="input1" placeholder="Add new text..">
-        <input class="mt-20 ml-3 py-[6px] pl-3 peer-autofill: rounded-md border-4 text-[12px]" type="datetime-local" id="birthdaytime" name="birthdaytime">
-        <input class="mt-20 py-[6px] px-5 mr-5 rounded-md text-[13px] font-semibold text-white ml-3 bg-blue-500" type="submit">
+        <input class="mt-20 ml-5  py-[6px] pl-3 pr-[20%] rounded-md border-4" type="text" id="input1" placeholder="Add new text..">
+        <input class="mt-20 ml-3 py-[6px] pl-3 peer-autofill: rounded-md border-4 text-[12px]" type="date" id="birthdaytime" name="birthdaytime">
+        <button onclick="submit()" class=" mt-20 py-[6px] px-5 mr-5 rounded-md text-[13px] font-semibold text-white ml-3 bg-blue-500" type="button">Submit</button>
     </div>    
-
+    <div class="ml-5 mt-10 " id="hasil"></div>
     </section>
+    <script>
+        function submit () {
+            var input1 =document.getElementById ('input1').value
+            var birthdaytime =document.getElementById ('birthdaytime').value
+            var hasil=input1+birthdaytime
+            console.log(hasil);
+            const liElement = document.createElement('li');
+            liElement.textContent = hasil;
+            const divElement = document.getElementById('hasil');
+            divElement.appendChild(liElement);
+            
+        }
+    </script>
 </body>
 </html>
